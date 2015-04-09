@@ -2,7 +2,7 @@ public class Segment{
 	private int segmentNumber;		//segment identification number
 	private int segSize;				//size of the segment
 	private boolean occupied;			//indicates if the segment is in use
-	private Job job;					//job assigned to segment
+//	private Job job;					//job assigned to segment
 	
 	private static numberCounter;
 	public Segment(int size){
