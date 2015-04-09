@@ -38,14 +38,40 @@ public class Job{
 		this.status="Waiting";
 	}
 	
-	public int getID(){return id;}
-	public int getMemoryRequest(){return memReq;}
-	public int getTimeRequest(){return exTimeReq;}
-	public void setSegmentNumber(int segNum){this.segNum=segNum;}
-	public int getSegmentNumber(){return segNum;}
-	public void setTimeRemaining(int time){this.Rem=time;}
-	public int getTimeRemaining(){return Rem;}
-	public void setStatus(String status){this.status=status;}
-	public String getStatus(){return status;}
+	public int getID(){
+		return id;
+	}
+	
+	public int getMemoryRequest(){
+		return memReq;
+	}
+	
+	public int getTimeRequest(){
+		return exTimeReq;
+	}
+	
+	public void setSegmentNumber(int segNum){
+		this.segNum=segNum;
+	}
+	
+	public int getSegmentNumber(){
+		return segNum;
+	}
+	
+	public void setTimeRemaining(int time){
+		this.exTimeRem=time;
+	}
+	
+	public int getTimeRemaining(){
+		return exTimeRem;
+	}
+	
+	public void setStatus(String status){
+		this.status=status;
+	}
+	
+	public String getStatus(){
+		return status;
+	}
 	
 }
