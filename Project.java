@@ -45,4 +45,13 @@ public class Project {
 			//System.out.println(job[i].getTimeRequest());
 		}
 	}
+	
+	public void output(int time,Job job){
+		System.out.println(time);
+		System.out.println(job.getID());
+		System.out.println(job.getSegmentNumber());
+		System.out.println(job.getMemoryRequest());
+		System.out.println(job.getTimeRemaining());
+		System.out.println(job.getStatus());
+	}
 }
