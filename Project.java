@@ -2,12 +2,13 @@
 using the First-Fit allocation policy. The jobs in the ready queue are executed on the four processors in a round robin fashion with a time slice of one time unit.  */
 public class Project {
 	
-	private Job[] job=new Job[20];
+	private static Job[] job=new Job[20];
 	
-	public static void main(int[] Args){
+	public static void main(String[] Args){
 		//job generation
-		for(int i=0;i>20;i++){
+		for(int i=0;i<20;i++){
 			job[i]=new Job();
+			//System.out.println(job[i].getTimeRequest());
 		}
 		
 		//case One
@@ -26,8 +27,9 @@ public class Project {
 		executed on the four processors in a round robin fashion with a time slice of one 
 		time unit.*/
 		System.out.println("~~~~~~CASE TWO~~~~~~");
-		for(int i=0;i>20;i++){//reset jobs so that we use the same list
+		for(int i=0;i<20;i++){//reset jobs so that we use the same list
 			job[i].reset();
+			//System.out.println(job[i].getTimeRequest());
 		}
 		
 		
@@ -38,8 +40,9 @@ public class Project {
 		policy. The jobs in the ready queue are executed on the four processors in a round 
 		robin fashion with a time slice of one time unit.*/
 		System.out.println("~~~~~~CASE THREE~~~~~~");
-		for(int i=0;i>20;i++){//reset jobs so that we use the same list
+		for(int i=0;i<20;i++){//reset jobs so that we use the same list
 			job[i].reset();
+			//System.out.println(job[i].getTimeRequest());
 		}
 	}
 }
