@@ -17,7 +17,7 @@ public class Project {
 		executed on the four processors in a round robin fashion with a time slice of one
 		time unit.  */
 		System.out.println("~~~~~~CASE ONE~~~~~~");
-		
+		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		
 		
 		
@@ -27,6 +27,7 @@ public class Project {
 		executed on the four processors in a round robin fashion with a time slice of one 
 		time unit.*/
 		System.out.println("~~~~~~CASE TWO~~~~~~");
+		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		for(int i=0;i<20;i++){//reset jobs so that we use the same list
 			job[i].reset();
 			//System.out.println(job[i].getTimeRequest());
@@ -40,6 +41,7 @@ public class Project {
 		policy. The jobs in the ready queue are executed on the four processors in a round 
 		robin fashion with a time slice of one time unit.*/
 		System.out.println("~~~~~~CASE THREE~~~~~~");
+		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		for(int i=0;i<20;i++){//reset jobs so that we use the same list
 			job[i].reset();
 			//System.out.println(job[i].getTimeRequest());
@@ -47,11 +49,11 @@ public class Project {
 	}
 	
 	public void output(int time,Job job){
-		System.out.println(time);
-		System.out.println(job.getID());
-		System.out.println(job.getSegmentNumber());
-		System.out.println(job.getMemoryRequest());
-		System.out.println(job.getTimeRemaining());
-		System.out.println(job.getStatus());
+		System.out.println(time+"/t");
+		System.out.print(job.getID()+"/t");
+		System.out.print(job.getSegmentNumber()+"/t");
+		System.out.print(job.getMemoryRequest()+"/t");
+		System.out.print(job.getTimeRemaining()+"/t");
+		System.out.print(job.getStatus());
 	}
 }
