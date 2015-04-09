@@ -1,15 +1,15 @@
-using java.util.Random();
+import java.util.Random;
 
 public class Job{
 
-	private int iD;				//Job identification number
+	private int id;				//Job identification number
 	private int memReq;			//Memory request (in MB)
 	private int exTimeReq;		//Execution time request
 	private int segNum;			//Memory assigned (segment number)
 	private int exTimeRem;		//Execution time remaining (initially same as item c.)
 	private String status;		//Job status: Waiting, Ready, Running, & Finished
 	
-	private static idCounter=0;
+	private static int idCounter=0;
 	public Job(){
 		this.id=idCounter;
 		idCounter++;
