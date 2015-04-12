@@ -1,8 +1,15 @@
-/*Jobs are moved from the job queue to the ready queue in First-Come First-Served order and 
-using the First-Fit allocation policy. The jobs in the ready queue are executed on the four processors in a round robin fashion with a time slice of one time unit.  */
+/*
+Nikki Pruitt
+Joshua Hester
+
+
+Jobs are moved from the job queue to the ready queue in First-Come First-Served order and 
+using the First-Fit allocation policy. The jobs in the ready queue are executed on the four processors in a round robin fashion with a time slice of one time unit.  
+*/
+
 public class Project {
 	
-	private static Job[] job=new Job[20];
+	private static Job[] job=new Job[20];  //list of 20 jobs to be created
 	
 	public static void main(String[] Args){
 		//job generation
@@ -27,6 +34,7 @@ public class Project {
 		executed on the four processors in a round robin fashion with a time slice of one 
 		time unit.*/
 		System.out.println("~~~~~~CASE TWO~~~~~~");
+		//output headings
 		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		for(int i=0;i<20;i++){//reset jobs so that we use the same list
 			job[i].reset();
@@ -41,12 +49,15 @@ public class Project {
 		policy. The jobs in the ready queue are executed on the four processors in a round 
 		robin fashion with a time slice of one time unit.*/
 		System.out.println("~~~~~~CASE THREE~~~~~~");
+		//output headings 
 		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		for(int i=0;i<20;i++){//reset jobs so that we use the same list
+		//reset jobs so that we use the same list
+		for(int i=0;i<20;i++){
 			job[i].reset();
 			//System.out.println(job[i].getTimeRequest());
 		}
 	}
+	
 	
 	public void output(int time,Job job){
 		System.out.println(time+"/t");

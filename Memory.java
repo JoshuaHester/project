@@ -1,7 +1,13 @@
+/*
+Nikki Pruitt
+Joshua Hester
+*/
+
 public class Memory {
 	private Segements[] segments;		//array of memory segments
 	
 	public Memory() {
+		//the 10 segments of memory with specifed sizes
 		segements = new Segments[10];
 		segments[0] = new Segments(32);
 		segments[1] = new Segments(48);
