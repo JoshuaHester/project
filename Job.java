@@ -23,7 +23,7 @@ public class Job{
 		this.memReq = generateMemoryReq(); //rand 16-64
 		this.exTimeReq = generateTimeRequest(); //rand 2-10
 		this.exTimeRem = exTimeReq;
-		this.segNum = -1;
+		this.segNum = -1;		//indicates that job isn't in a segment
 		this.status = "Waiting";
 	}
 	

@@ -5,8 +5,9 @@ Joshua Hester
 
 public class Memory {
 	private Segments[] segments;		//array of memory segments
-	private Job[] jobs;
+	private Job[] jobs;				//array of jobs
 	
+	//constructor for memory
 	public Memory() {
 		//the 10 segments of memory with specifed sizes
 		segments = new Segments[10];
