@@ -14,38 +14,38 @@ public class Job{
 	private int exTimeRem;		//Execution time remaining (initially same as item c.)
 	private String status;		//Job status: Waiting, Ready, Running, & Finished
 	
-	private static int idCounter=0;	//counter used to number each segment
+	private static int idCounter = 0;	//counter used to number each segment
 	
 	//constructor for the job object
 	public Job(){
 		this.id=idCounter;
 		idCounter++;
-		this.memReq=generateMemoryReq();//rand 16-64
-		this.exTimeReq=generateTimeRequest();//rand 2-10
-		this.exTimeRem=exTimeReq;
-		this.segNum=-1;
-		this.status="Waiting";
+		this.memReq = generateMemoryReq(); //rand 16-64
+		this.exTimeReq = generateTimeRequest(); //rand 2-10
+		this.exTimeRem = exTimeReq;
+		this.segNum = -1;
+		this.status = "Waiting";
 	}
 	
 	//generates a random memory request between 16-64 megabytes
 	public int generateMemoryReq(){
 		Random rand = new Random();
-		int  n = rand.nextInt(48) + 16;
+		int n = rand.nextInt(48) + 16;
 		return n;
 	}
 	
 	//generates a random time request between 2-10 seconds
 	public int generateTimeRequest(){
 		Random rand = new Random();
-		int  n = rand.nextInt(8) + 2;
+		int n = rand.nextInt(8) + 2;
 		return n;
 	}
 	
 	//resets the job
 	public void reset(){
-		this.exTimeRem=exTimeReq;
-		this.segNum=-1;
-		this.status="Waiting";
+		this.exTimeRem = exTimeReq;
+		this.segNum = -1;
+		this.status = "Waiting";
 	}
 	
 	//returns the job id number

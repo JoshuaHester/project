@@ -1,31 +1,23 @@
 /*
 Nikki Pruitt
 Joshua Hester
-
-
-Jobs are moved from the job queue to the ready queue in First-Come First-Served order and 
-using the First-Fit allocation policy. The jobs in the ready queue are executed on the four processors in a round robin fashion with a time slice of one time unit.  
 */
 
 public class Project {
 	
-	private static Job[] job=new Job[20];  //list of 20 jobs to be created
+	private static Memory memory = new Memory();
 	
 	public static void main(String[] Args){
-		//job generation
-		for(int i=0;i<20;i++){
-			job[i]=new Job();
-			//System.out.println(job[i].getTimeRequest());
-		}
-		
 		//case One
 		/*Jobs are moved from the job queue to the ready queue in First-Come First-Served 
 		order and using the First-Fit allocation policy. The jobs in the ready queue are 
 		executed on the four processors in a round robin fashion with a time slice of one
 		time unit.  */
 		System.out.println("~~~~~~CASE ONE~~~~~~");
-		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		
+		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
+		memory.listJobs();
+		memory.listSegments();
+		memory.reset();
 		
 		
 		//case Two
@@ -35,13 +27,10 @@ public class Project {
 		time unit.*/
 		System.out.println("~~~~~~CASE TWO~~~~~~");
 		//output headings
-		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		for(int i=0;i<20;i++){//reset jobs so that we use the same list
-			job[i].reset();
-			//System.out.println(job[i].getTimeRequest());
-		}
-		
-		
+		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
+		memory.listJobs();
+		memory.listSegments();
+		memory.reset();
 		
 		//case Three
 		/*Jobs are moved from the job queue to the ready queue in Shortest-Job First-Served
@@ -50,12 +39,9 @@ public class Project {
 		robin fashion with a time slice of one time unit.*/
 		System.out.println("~~~~~~CASE THREE~~~~~~");
 		//output headings 
-		System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		//reset jobs so that we use the same list
-		for(int i=0;i<20;i++){
-			job[i].reset();
-			//System.out.println(job[i].getTimeRequest());
-		}
+		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
+		memory.listJobs();
+		memory.listSegments();
 	}
 	
 	
