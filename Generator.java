@@ -23,6 +23,7 @@ public class Generator {
 	public Generator(Memory mem, Order order, Allocation alloc) {
 		this.order = order;
 		this.allocation = alloc;
+		timer = 0;
 		jobs = mem.getJobs();
 		segments = mem.getSegments();
 		createFile();
@@ -115,7 +116,7 @@ public class Generator {
 	
 	//creates output files for each test case
 	public void createFile() {
-		try {
+		try{
 			if(order == Order.FCFS && allocation == Allocation.FIRST_FIT) {
 				outputFile = new PrintWriter(new File("TestCaseOne.txt"));
 			}
@@ -219,9 +220,11 @@ public class Generator {
 	
 	public void execute() {
 		int[] segs = {0,1,2,3};
-		while(true){//currently just proves that the above method is working as intended
+		while(true && timer < 31){//currently just proves that the above method is working as intended
 			segs = executeTimeStepAndReturnNext(segs);
 			System.out.println(segs[0]+" "+segs[1]+" "+segs[2]+" "+segs[3]);
+			System.out.println("Time is: " + timer);
+			timer++;
 		}
 		
 		
