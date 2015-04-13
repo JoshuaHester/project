@@ -19,16 +19,17 @@ public class Generator {
 	private Job[] jobs;					//list of jobs 
 	private Segments[] segments;			//list of segments
 	
+	//constructor for the generator class
 	public Generator(Memory mem, Order order, Allocation alloc) {
 		this.order = order;
 		this.allocation = alloc;
 		jobs = mem.getJobs();
 		segments = mem.getSegments();
-		createFiles();
+		createFile();
 	}
 	
 	//creates output files for each test case
-	public void createFiles() {
+	public void createFile() {
 		try {
 			if(order == Order.FCFS && allocation == Allocation.FIRST_FIT){
 				outputFile = new PrintWriter(new File("TestCaseOne.txt"));
@@ -42,15 +43,67 @@ public class Generator {
 		} catch (FileNotFoundException e) {}
 	}
 	
-	public void finishedJobs() {
+	//writes the results of each time unit to the screen and output file
+	public void writeOutput() {
+		System.out.println("TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES");
+		outputFile.println("TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES");
 		
+		for(int i = 0; i < jobs.length; i++) {
+			System.out.println(timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus());
+			outputFile.println(timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus());
+		}
+		
+		System.out.println("Wasted Space: " + totalWaste() + " MB");
+		System.out.println("Jobs Waiting: " + waitingJobs());
+		System.out.println();
+		outputFile.println("Wasted Space: " + totalWaste() + " MB");
+		outputFile.println("Jobs Waiting: " + waitingJobs());
+		outputFile.println();
 	}
 	
-	public void waitingJobs() {
-		
+	//returns the number of finished jobs
+	public int finishedJobs() {
+		int finishedJobs = 0;
+		for(int i = 0; i < jobs.length; i++) {
+			if(jobs[i].getStatus().equals("finished")){
+				finishedJobs++;
+			}
+		}
+		return finishedJobs;
 	}
 	
-	public void totalWaste() {
-		
+	//returns the number of waiting jobs
+	public int waitingJobs() {
+		int waitingJobs = 0;
+		for(int i = 0; i < jobs.length; i++) {
+			if(jobs[i].getStatus().equals("waiting")) {
+				waitingJobs++;
+			}
+		}
+		return waitingJobs;
+	}
+	
+	//returns the total amount of wasted space
+	public int totalWaste() {
+		int wastedSpace = 0;
+		for(int i = 0; i < segments.length; i++) {
+			if(!segments[i].isOccupied()) {
+				wastedSpace = wastedSpace + segments[i].getSize();
+			}
+			else {
+				wastedSpace = wastedSpace + segments[i].getWastedSpace();
+			}
+		}
+		return wastedSpace;
+	}
+	
+	//checks to see if all jobs are finished
+	public boolean allJobsFinished() {
+		for(int i = 0; i < jobs.length; i++) {
+			if(!jobs[i].getStatus().equals("finished")) {
+				return false;
+			}
+		}
+		return true;
 	}
 }

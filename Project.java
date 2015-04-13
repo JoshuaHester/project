@@ -10,38 +10,34 @@ public class Project {
 	public static void main(String[] Args){
 		//case One - First Come, First Served order, First Fit allocation policy
 		System.out.println("~~~~~~CASE ONE~~~~~~");
-		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		Generator caseOne = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.FIRST_FIT);
-		memory.listJobs();
+	/*	memory.listJobs();
 		memory.listSegments();
 		memory.reset();
-		
+		System.out.println("Finished Jobs: " + caseOne.finishedJobs());
+		System.out.println("Waiting Jobs: " + caseOne.waitingJobs());
+		System.out.println("Wasted Space: " + caseOne.totalWaste());*/
+		caseOne.writeOutput();
 		
 		//case Two - First Come, First Serve order, Best Fit allocation policy
 		System.out.println("~~~~~~CASE TWO~~~~~~");
-		//output headings
-		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
 		Generator caseTwo = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.BEST_FIT);
-		memory.listJobs();
+	/*	memory.listJobs();
 		memory.listSegments();
 		memory.reset();
+		System.out.println("Finished Jobs: " + caseTwo.finishedJobs());
+		System.out.println("Waiting Jobs: " + caseTwo.waitingJobs());
+		System.out.println("Wasted Space: " + caseTwo.totalWaste());*/
+		caseTwo.writeOutput();
 		
 		//case Three - Shortest Job First order, Best Fit allocation policy
-		System.out.println("~~~~~~CASE THREE~~~~~~");
-		//output headings 
-		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		Generator caseThree = new Generator(memory, Generator.Order.SJF, Generator.Allocation.BEST_FIT);
-		memory.listJobs();
+		System.out.println("~~~~~~CASE THREE~~~~~~");		Generator caseThree = new Generator(memory, Generator.Order.SJF, Generator.Allocation.BEST_FIT);
+	/*	memory.listJobs();
 		memory.listSegments();
+		System.out.println("Finished Jobs: " + caseThree.finishedJobs());
+		System.out.println("Waiting Jobs: " + caseThree.waitingJobs());
+		System.out.println("Wasted Space: " + caseThree.totalWaste());*/
+		caseThree.writeOutput();
 	}
-	
-	
-	public void output(int time,Job job){
-		System.out.println(time+"/t");
-		System.out.print(job.getID()+"/t");
-		System.out.print(job.getSegmentNumber()+"/t");
-		System.out.print(job.getMemoryRequest()+"/t");
-		System.out.print(job.getTimeRemaining()+"/t");
-		System.out.print(job.getStatus());
-	}
+
 }

@@ -24,7 +24,7 @@ public class Job{
 		this.exTimeReq = generateTimeRequest(); //rand 2-10
 		this.exTimeRem = exTimeReq;
 		this.segNum = -1;		//indicates that job isn't in a segment
-		this.status = "Waiting";
+		this.status = "waiting";
 	}
 	
 	//generates a random memory request between 16-64 megabytes
@@ -45,7 +45,7 @@ public class Job{
 	public void reset(){
 		this.exTimeRem = exTimeReq;
 		this.segNum = -1;
-		this.status = "Waiting";
+		this.status = "waiting";
 	}
 	
 	//returns the job id number

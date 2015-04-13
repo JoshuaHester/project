@@ -58,10 +58,12 @@ public class Memory {
 		}
 	}
 	
+	//returns a list of the jobs
 	public Job[] getJobs() {
 		return jobs;
 	}
 	
+	//returns a list of the segments
 	public Segments[] getSegments() {
 		return segments;
 	}
