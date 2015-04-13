@@ -15,6 +15,9 @@ public class Project {
 		//System.out.println();
 		caseOne.writeOutput();
 		
+		printHeader();
+		
+		
 		memory.reset();
 		
 		//case Two - First Come, First Serve order, Best Fit allocation policy
@@ -33,6 +36,11 @@ public class Project {
 		caseThree.writeOutput();
 		
 		
+		//test
+		caseThree.execute();
 	}
-
+	
+	private static void printHeader(){
+		System.out.println("TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES");
+	}	
 }

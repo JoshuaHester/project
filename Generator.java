@@ -146,6 +146,8 @@ public class Generator {
 		outputFile.println();
 	}
 	
+	
+	
 	//returns the number of finished jobs
 	public int finishedJobs() {
 		int finishedJobs = 0;
@@ -191,4 +193,37 @@ public class Generator {
 		}
 		return true;
 	}
+	
+	public int[] executeTimeStepAndReturnNext(int[] segment) {//4 segments are supposed to execute simultaneously, "Segments" are the segment numbers to be executing this round. If [2,3,4,5] is passed in, [6,7,8,9] should be returned.
+
+		//return portion. This does not currently account for a segment not running due to having nothing to run. in those cases, the segment number for each subsequent segment should be incremented
+		int[] returns = new int[4];
+		for(int i=0; i<4; i++){
+			
+			int count = 0;
+			int temp = segment[i]+4;
+			int diff = temp - 10;
+			if(diff>=0){
+				returns[i] = diff;
+			}
+			else {
+				returns[i]=temp;
+			}
+		}
+		return returns;
+	}
+	
+	public void execute() {
+		int[] segs = {0,1,2,3};
+		while(true){//currently just proves that the above method is working as intended
+			segs = executeTimeStepAndReturnNext(segs);
+			System.out.println(segs[0]+" "+segs[1]+" "+segs[2]+" "+segs[3]);
+		}
+		
+		
+		
+	}
+	
+	
+	
 }
