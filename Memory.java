@@ -57,4 +57,12 @@ public class Memory {
 			segments[i].reset();
 		}
 	}
+	
+	public Job[] getJobs() {
+		return jobs;
+	}
+	
+	public Segments[] getSegments() {
+		return segments;
+	}
 }

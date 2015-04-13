@@ -11,7 +11,7 @@ public class Project {
 		//case One - First Come, First Served order, First Fit allocation policy
 		System.out.println("~~~~~~CASE ONE~~~~~~");
 		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		Generator caseOne = new Generator(Generator.Order.FCFS, Generator.Allocation.FIRST_FIT);
+		Generator caseOne = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.FIRST_FIT);
 		memory.listJobs();
 		memory.listSegments();
 		memory.reset();
@@ -21,7 +21,7 @@ public class Project {
 		System.out.println("~~~~~~CASE TWO~~~~~~");
 		//output headings
 		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		Generator caseTwo = new Generator(Generator.Order.FCFS, Generator.Allocation.BEST_FIT);
+		Generator caseTwo = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.BEST_FIT);
 		memory.listJobs();
 		memory.listSegments();
 		memory.reset();
@@ -30,7 +30,7 @@ public class Project {
 		System.out.println("~~~~~~CASE THREE~~~~~~");
 		//output headings 
 		//System.out.println("TIME	ID	SEGMENT      MEM REQUEST	TIME REMAIN	MESSAGES");
-		Generator caseThree = new Generator(Generator.Order.SJF, Generator.Allocation.BEST_FIT);
+		Generator caseThree = new Generator(memory, Generator.Order.SJF, Generator.Allocation.BEST_FIT);
 		memory.listJobs();
 		memory.listSegments();
 	}

@@ -37,6 +37,7 @@ public class Segments{
 	public void removeJob() {
 		job = null;
 		occupied = false;
+		wastedSpace = 0;
 	}
 	
 	//returns the size of the segment
