@@ -53,6 +53,20 @@ public class Generator {
 		}
 	}
 	
+	//puts job into the first segment it fits in
+	public int firstFit(Job job) {
+		for(int i = 0; i < segments.length; i++) {
+			if(job.getMemoryRequest() < segments[i].getSize() && !segments[i].isOccupied()) {
+				return i;
+			}
+		}
+		return -1;	//returns this if no free segment has enough memory
+	}
+	
+	/*public int bestFit(Job job) {
+		
+	}*/
+	
 	//prints the jobs; used for testing
 	public void printJobs() {
 		for(int i = 0; i < jobs.length; i++) {
