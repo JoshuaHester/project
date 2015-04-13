@@ -29,6 +29,32 @@ public class Generator {
 		sortJobs(order);
 	}
 	
+	//test run to see if statuses update/allocation methods work
+	public void test() {
+		for(int i = 0; i < jobs.length; i++) {
+			if(allocation == Allocation.FIRST_FIT) {
+				int fit = firstFit(jobs[i]);
+				//System.out.println("Job " + i + " first fit is " + fit);
+				if(fit != -1 && !segments[fit].isOccupied()) {
+					segments[fit].assignJob(jobs[i]);
+				}
+			}
+			else if(allocation == Allocation.BEST_FIT) {
+				int fit = bestFit(jobs[i]);
+				//System.out.println("Job " + i + " best fit is " + fit); 
+				if(fit != -1 && !segments[fit].isOccupied()) {
+					segments[fit].assignJob(jobs[i]);
+				}
+			}
+		}
+		
+		for(int i = 0; i < segments.length; i++){
+			if(segments[i].isOccupied()) {
+				segments[i].removeJob();
+			}
+		}
+	}
+	
 	//checks to see if jobs need to be sorted
 	public void sortJobs(Order ord) {
 		if(ord == Order.SJF) {
@@ -90,7 +116,7 @@ public class Generator {
 	//creates output files for each test case
 	public void createFile() {
 		try {
-			if(order == Order.FCFS && allocation == Allocation.FIRST_FIT){
+			if(order == Order.FCFS && allocation == Allocation.FIRST_FIT) {
 				outputFile = new PrintWriter(new File("TestCaseOne.txt"));
 			}
 			else if(order == Order.FCFS && allocation == Allocation.BEST_FIT) {

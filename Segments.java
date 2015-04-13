@@ -31,10 +31,12 @@ public class Segments{
 		job = j;
 		occupied = true;
 		job.setSegmentNumber(segmentNumber);
+		job.setStatus("running");
 	}
 	
 	//removes the assigned job from the segment
 	public void removeJob() {
+		job.setStatus("finished");
 		job = null;
 		occupied = false;
 		wastedSpace = 0;
