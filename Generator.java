@@ -199,7 +199,7 @@ public class Generator {
 		return true;
 	}
 	
-	public int[] executeTimeStepAndReturnNext(int[] segment) {//4 segments are supposed to execute simultaneously, "Segments" are the segment numbers to be executing this round. If [2,3,4,5] is passed in, [6,7,8,9] should be returned.
+	public int[] nextSegments(int[] segment) {//4 segments are supposed to execute simultaneously, "Segments" are the segment numbers to be executing this round. If [2,3,4,5] is passed in, [6,7,8,9] should be returned.
 
 		//return portion. This does not currently account for a segment not running due to having nothing to run. in those cases, the segment number for each subsequent segment should be incremented
 		int[] returns = new int[4];
@@ -221,7 +221,7 @@ public class Generator {
 	public void execute() {
 		int[] segs = {0,1,2,3};
 		while(true && timer < 31){//currently just proves that the above method is working as intended
-			segs = executeTimeStepAndReturnNext(segs);
+			segs = nextSegments(segs);
 			System.out.println(segs[0]+" "+segs[1]+" "+segs[2]+" "+segs[3]);
 			System.out.println("Time is: " + timer);
 			timer++;
