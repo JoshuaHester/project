@@ -63,9 +63,22 @@ public class Generator {
 		return -1;	//returns this if no free segment has enough memory
 	}
 	
-	/*public int bestFit(Job job) {
+	//puts job into the segment that it best fits in
+	public int bestFit(Job job) {
+		int initalBestFit = 100;	//value set higher than possible waste 
+		int index = -1;			//returns this is no free segment has enough free space
+		for(int i = 0; i < segments.length; i++) {
+			int currentBestFit = segments[i].getSize() - job.getMemoryRequest();
+			if(segments[i].getSize() > job.getMemoryRequest() && !segments[i].isOccupied()) {
+				if(currentBestFit < initalBestFit) {
+					initalBestFit = currentBestFit;
+					index = i;
+				}
+			}
+		}
 		
-	}*/
+		return index;
+	}
 	
 	//prints the jobs; used for testing
 	public void printJobs() {
