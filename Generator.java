@@ -26,6 +26,38 @@ public class Generator {
 		jobs = mem.getJobs();
 		segments = mem.getSegments();
 		createFile();
+		sortJobs(order);
+	}
+	
+	//checks to see if jobs need to be sorted
+	public void sortJobs(Order ord) {
+		if(ord == Order.SJF) {
+			shortestJobFirst();
+		}
+		//printJobs();
+	}
+	
+	//sorts the job into shortest job first order
+	public void shortestJobFirst() {
+		boolean flag = true;
+		while(flag) {
+			flag = false;
+			for(int i = 0; i < 19; i++) {
+				if(jobs[i].getTimeRemaining() > jobs[i+1].getTimeRemaining()) {
+					Job temp = jobs[i];
+					jobs[i] = jobs[i+1];
+					jobs[i+1] = temp;
+					flag = true;
+				}
+			}
+		}
+	}
+	
+	//prints the jobs; used for testing
+	public void printJobs() {
+		for(int i = 0; i < jobs.length; i++) {
+			System.out.println(jobs[i].getID() + " " + jobs[i].getTimeRequest());
+		}
 	}
 	
 	//creates output files for each test case
