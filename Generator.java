@@ -48,11 +48,11 @@ public class Generator {
 			}
 		}
 		
-		for(int i = 0; i < segments.length; i++){
+	/*	for(int i = 0; i < segments.length; i++){
 			if(segments[i].isOccupied()) {
 				segments[i].removeJob();
 			}
-		}
+		}*/
 	}
 	
 	//checks to see if jobs need to be sorted
@@ -130,19 +130,23 @@ public class Generator {
 	
 	//writes the results of each time unit to the screen and output file
 	public void writeOutput() {
-		System.out.println("TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES");
-		outputFile.println("TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES");
+		String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES";
+		System.out.println(header);
+		outputFile.println(header);
 		
 		for(int i = 0; i < jobs.length; i++) {
-			System.out.println(timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus());
-			outputFile.println(timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus());
+			String output = timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus();
+			System.out.println(output);
+			outputFile.println(output);
 		}
 		
-		System.out.println("Wasted Space: " + totalWaste() + " MB");
-		System.out.println("Jobs Waiting: " + waitingJobs());
+		String wasted = "Wasted Space: " + totalWaste() + " MB";
+		String waiting = "Jobs Waiting: " + waitingJobs();
+		System.out.println(wasted);
+		System.out.println(waiting);
 		System.out.println();
-		outputFile.println("Wasted Space: " + totalWaste() + " MB");
-		outputFile.println("Jobs Waiting: " + waitingJobs());
+		outputFile.println(wasted);
+		outputFile.println(waiting);
 		outputFile.println();
 	}
 	
