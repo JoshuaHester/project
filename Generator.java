@@ -83,11 +83,15 @@ public class Generator {
 		return index;
 	}
 	
-	//prints the jobs; used for testing
+	//prints the jobs
 	public void printJobs() {
 		for(int i = 0; i < jobs.length; i++) {
-			System.out.println("Job ID: " + jobs[i].getID() + " Time: " + jobs[i].getTimeRequest() + " Memory: " + jobs[i].getMemoryRequest());
+			String job = "Job ID: " + jobs[i].getID() + "\t Time: " + jobs[i].getTimeRequest() + "\t Memory: " + jobs[i].getMemoryRequest();
+			System.out.println(job);
+			outputFile.println(job);
 		}
+		System.out.println();
+		outputFile.println();
 	}
 	
 	//creates output files for each test case
@@ -107,12 +111,12 @@ public class Generator {
 	
 	//writes the results of each time unit to the screen and output file
 	public void writeOutput() {
-		String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQ" + "\tTIME REMAINING" + "\tMESSAGES";
+		String header = "TIME" + "\tID" + "\tSEGMENT" + "\t\tMEM REQUEST" + "\tTIME REMAIN" + "\tMESSAGES";
 		System.out.println(header);
 		outputFile.println(header);
 		
 		for(int i = 0; i < jobs.length; i++) {
-			String output = timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus();
+			String output = timer + "\t " + jobs[i].getID() + "\t " + jobs[i].getSegmentNumber() + "\t\t  " + jobs[i].getMemoryRequest() + "\t\t" + jobs[i].getTimeRemaining() + "\t\t " + jobs[i].getStatus();
 			System.out.println(output);
 			outputFile.println(output);
 		}
@@ -271,13 +275,13 @@ public class Generator {
 			
 			if(jobsFinished == 9) {
 				jobsRunning = 0;
-				refresh();
+				nextLoad();
 			}
 		}
 	}
 	
-	
-	public void refresh() {
+	//prepares for next set of jobs to be brought into ready queue
+	public void nextLoad() {
 		jobsFinished = 0;
 		loadJobs();
 	}

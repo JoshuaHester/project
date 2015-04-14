@@ -1,5 +1,6 @@
-The main for this program can be found in the Project.java file. Compiling and running this file 
-The results for the three test cases can be found 
+The main for this program can be found in the Project.java file. Compiling and running this file will simulate the hypothetical operating system.
+
+The results for the three test cases can be found in the TestCaseOne.txt, TestCaseTwo.txt, and TestCaseThree.txt files.
 
 Project.java - This file is the main for the program. The three test cases are created here. The output for the tests are displayed on the command line and is printed out to the test case text files.
 
