@@ -225,7 +225,9 @@ public class Generator {
 				j++;
 				for(int k=0;k<4;k++){
 					if(open[temp[k]]){
-						temp[k]++;
+						for(k=k;k<4;k++){
+							temp[k]++;
+						}
 					}
 					
 					for(int i=0;i<4;i++){
@@ -238,7 +240,7 @@ public class Generator {
 				}
 				//temp[i]=-1
 			}
-			
+			System.out.print(temp[0]);System.out.print(temp[1]);System.out.print(temp[2]);System.out.print(temp[3]);System.out.println();
 			return temp;
 		}
 		
