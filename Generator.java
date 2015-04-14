@@ -222,13 +222,38 @@ public class Generator {
 	
 	public void execute() {
 		int[] segs = {0,1,2,3};
+		boolean flag = true;
+		//allocation of segments
+		while(timer<=30) {
+			while(flag) {
+				if(allocation == Allocation.FIRST_FIT) {
+					int fit = firstFit(jobs[i]);
+					if(fit != -1 && !segments[fit].isOccupied()) {
+						segments[fit].assignJob(jobs[i]);
+					}
+				}
+				else if(allocation == Allocation.BEST_FIT) {
+					int fit = bestFit(jobs[i]);
+					if(fit != -1 && !segments[fit].isOccupied()) {
+						segments[fit].assignJob(jobs[i]);
+					}
+				}
+			}
+			for(int i=0;i<4;i++) {
+				segs[i].getJob().decrementTime();
+			}
+			writeOutput();
+			timer++;
+			segs = nextSegments(segs);
+		}
+		/*
 		while(true && timer < 31){//currently just proves that the above method is working as intended
 			segs = nextSegments(segs);
 			System.out.println(segs[0]+" "+segs[1]+" "+segs[2]+" "+segs[3]);
 			System.out.println("Time is: " + timer);
 			timer++;
 		}
-		
+		*/
 		
 		
 	}
