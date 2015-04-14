@@ -11,9 +11,9 @@ public class Project {
 		//case One - First Come, First Served order, First Fit allocation policy
 		System.out.println("~~~~~~CASE ONE~~~~~~");
 		Generator caseOne = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.FIRST_FIT);
-		caseOne.test();
+	//	caseOne.test();
 		//System.out.println();
-		caseOne.writeOutput();
+	//	caseOne.writeOutput();
 		
 		printHeader();
 		caseOne.execute();
@@ -21,7 +21,7 @@ public class Project {
 		memory.reset();
 		
 		//case Two - First Come, First Serve order, Best Fit allocation policy
-		System.out.println("~~~~~~CASE TWO~~~~~~");
+	/*	System.out.println("~~~~~~CASE TWO~~~~~~");
 		Generator caseTwo = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.BEST_FIT);
 		caseTwo.test();
 		//System.out.println();
@@ -37,7 +37,7 @@ public class Project {
 		
 		
 		//test
-		caseThree.execute();
+		caseThree.execute();*/
 	}
 	
 	private static void printHeader(){

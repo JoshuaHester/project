@@ -220,12 +220,30 @@ public class Generator {
 				}
 			}
 			//step 3 (is empty? if yes, add and wrap when needed)
-			for(int j=0;j<10;j++) {
-				
-				
-				
+			int j=0;
+			while(j<10) {
+				j++;
+				for(int k=0;k<4;k++){
+					if(open[temp[k]]){
+						temp[k]++;
+					}
+					
+					for(int i=0;i<4;i++){
+						//(WRAP)
+						int diff = temp[i] - 10;
+						if(diff>=0){
+							temp[i]=diff;
+						}
+					}
+				}
+				//temp[i]=-1
 			}
 			
+			return temp;
+		}
+		
+		
+		
 		/*	
 		for(int z=0;z<10;z++) {
 			for(int i=0; i<4; i++){
@@ -246,13 +264,13 @@ public class Generator {
 					returns[i] = temp;
 				}
 				
-			*/
+			
 			}
-			System.out.println(returns[0]+returns[1]+returns[2]+returns[3]);
+			System.out.println(returns);
 		}
 		
 		return returns; // [6,7,8,9] --> [0,1,2,3] \, &  [0,1,2,3] --> [0,3,4,5] --> [0,3,5,6] & [6,7,8,9] --> [6,9,0,3]
-	}
+	}*/
 	
 	public void execute() {
 		int[] segs = {6,7,8,9};
