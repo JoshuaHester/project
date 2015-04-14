@@ -1,5 +1,5 @@
 /*
-Nikki Pruitt
+Amber Pruitt
 Joshua Hester
 */
 
@@ -12,6 +12,7 @@ public class Project {
 		System.out.println("~~~~~~CASE ONE~~~~~~");
 		Generator caseOne = new Generator(memory, Generator.Order.FCFS, Generator.Allocation.FIRST_FIT);
 		caseOne.execute();
+		System.out.println();
 		memory.reset();
 		
 		//case Two - First Come, First Serve order, Best Fit allocation policy
