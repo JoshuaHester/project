@@ -16,7 +16,7 @@ public class Project {
 		caseOne.writeOutput();
 		
 		printHeader();
-		
+		caseOne.execute();
 		
 		memory.reset();
 		

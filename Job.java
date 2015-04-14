@@ -74,9 +74,8 @@ public class Job{
 	}
 	
 	//updates the job's time remaining
-	public int decrementTime(){
+	public void decrementTime(){
 		exTimeRem--;
-		return exTimeRem;
 	}
 	
 	//returns the job's remaining execution time

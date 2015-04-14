@@ -205,27 +205,60 @@ public class Generator {
 
 		//return portion. This does not currently account for a segment not running due to having nothing to run. in those cases, the segment number for each subsequent segment should be incremented
 		int[] returns = new int[4];
-		for(int i=0; i<4; i++){
+		boolean[] open = new boolean[10];
+			for(int i = 0; i<10; i++){
+				open[i] = !segments[i].isOccupied();
+			}
+			boolean flag = true;
+			//step 1 (+4)
+			int[] temp = {segment[0]+4,segment[1]+4,segment[2]+4,segment[3]+4}; //0,1,2,3
+			for(int i=0;i<4;i++){
+				//step 2 (WRAP)
+				int diff = temp[i] - 10;
+				if(diff>=0){
+					temp[i]=diff;
+				}
+			}
+			//step 3 (is empty? if yes, add and wrap when needed)
+			for(int j=0;j<10;j++) {
+				
+				
+				
+			}
 			
-			int count = 0;
-			int temp = segment[i]+4;
-			int diff = temp - 10;
-			if(diff>=0){
-				returns[i] = diff;
+		/*	
+		for(int z=0;z<10;z++) {
+			for(int i=0; i<4; i++){
+				while(!segments[i+1].isOccupied()){
+					for(i=i;i<4;i++){
+						int temp = segment[i]+1;
+						
+					}
+				}
+				
+				
+				int temp = segment[i]+4;
+				int diff = temp - 10;
+				if(diff>=0){
+					returns[i] = diff;
+				}
+				else {
+					returns[i] = temp;
+				}
+				
+			*/
 			}
-			else {
-				returns[i]=temp;
-			}
+			System.out.println(returns[0]+returns[1]+returns[2]+returns[3]);
 		}
-		return returns;
+		
+		return returns; // [6,7,8,9] --> [0,1,2,3] \, &  [0,1,2,3] --> [0,3,4,5] --> [0,3,5,6] & [6,7,8,9] --> [6,9,0,3]
 	}
 	
 	public void execute() {
-		int[] segs = {0,1,2,3};
-		boolean flag = true;
+		int[] segs = {6,7,8,9};
 		//allocation of segments
 		while(timer<=30) {
-			while(flag) {
+			for(int i = 0; i < segments.length; i++) {
 				if(allocation == Allocation.FIRST_FIT) {
 					int fit = firstFit(jobs[i]);
 					if(fit != -1 && !segments[fit].isOccupied()) {
@@ -239,23 +272,21 @@ public class Generator {
 					}
 				}
 			}
-			for(int i=0;i<4;i++) {
-				segs[i].getJob().decrementTime();
-			}
+			segs = nextSegments(segs);
 			writeOutput();
+			for(int i=0;i<4;i++) {
+				segments[segs[i]].getJob().decrementTime();
+				segments[segs[i]].getJob().setStatus("running");
+				if(segments[segs[i]].getJob().getTimeRemaining()==0) {
+					segments[segs[i]].getJob().setStatus("finish");
+					segments[segs[i]].removeJob();
+				}
+			}
 			timer++;
-			segs = nextSegments(segs);
+			writeOutput();
+			
+			
 		}
-		/*
-		while(true && timer < 31){//currently just proves that the above method is working as intended
-			segs = nextSegments(segs);
-			System.out.println(segs[0]+" "+segs[1]+" "+segs[2]+" "+segs[3]);
-			System.out.println("Time is: " + timer);
-			timer++;
-		}
-		*/
-		
-		
 	}
 	
 	
