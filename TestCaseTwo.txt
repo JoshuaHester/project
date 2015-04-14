@@ -1,0 +1,722 @@
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+0	0	-1	53		3	waiting
+0	1	-1	29		6	waiting
+0	2	-1	61		8	waiting
+0	3	-1	58		5	waiting
+0	4	-1	46		3	waiting
+0	5	-1	17		7	waiting
+0	6	-1	39		2	waiting
+0	7	-1	45		8	waiting
+0	8	-1	46		6	waiting
+0	9	-1	62		2	waiting
+0	10	-1	43		9	waiting
+0	11	-1	26		3	waiting
+0	12	-1	34		6	waiting
+0	13	-1	25		6	waiting
+0	14	-1	61		9	waiting
+0	15	-1	17		2	waiting
+0	16	-1	40		9	waiting
+0	17	-1	21		6	waiting
+0	18	-1	28		6	waiting
+0	19	-1	61		2	waiting
+Wasted Space: 408 MB
+Jobs Waiting: 20
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+1	0	4	53		2	running
+1	1	0	29		5	running
+1	2	7	61		7	running
+1	3	-1	58		5	waiting
+1	4	1	46		2	running
+1	5	2	17		7	ready
+1	6	5	39		2	ready
+1	7	8	45		8	ready
+1	8	-1	46		6	waiting
+1	9	-1	62		2	waiting
+1	10	-1	43		9	waiting
+1	11	6	26		3	ready
+1	12	-1	34		6	waiting
+1	13	9	25		6	ready
+1	14	-1	61		9	waiting
+1	15	-1	17		2	waiting
+1	16	-1	40		9	waiting
+1	17	-1	21		6	waiting
+1	18	-1	28		6	waiting
+1	19	-1	61		2	waiting
+Wasted Space: 67 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+2	0	4	53		1	running
+2	1	0	29		4	running
+2	2	7	61		6	running
+2	3	-1	58		5	waiting
+2	4	1	46		1	running
+2	5	2	17		7	ready
+2	6	5	39		2	ready
+2	7	8	45		8	ready
+2	8	-1	46		6	waiting
+2	9	-1	62		2	waiting
+2	10	-1	43		9	waiting
+2	11	6	26		3	ready
+2	12	-1	34		6	waiting
+2	13	9	25		6	ready
+2	14	-1	61		9	waiting
+2	15	-1	17		2	waiting
+2	16	-1	40		9	waiting
+2	17	-1	21		6	waiting
+2	18	-1	28		6	waiting
+2	19	-1	61		2	waiting
+Wasted Space: 67 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+3	0	-1	53		0	finished
+3	1	0	29		3	running
+3	2	7	61		5	running
+3	3	-1	58		5	waiting
+3	4	-1	46		0	finished
+3	5	2	17		6	running
+3	6	5	39		1	running
+3	7	8	45		8	ready
+3	8	-1	46		6	waiting
+3	9	-1	62		2	waiting
+3	10	-1	43		9	waiting
+3	11	6	26		3	ready
+3	12	-1	34		6	waiting
+3	13	9	25		6	ready
+3	14	-1	61		9	waiting
+3	15	-1	17		2	waiting
+3	16	-1	40		9	waiting
+3	17	-1	21		6	waiting
+3	18	-1	28		6	waiting
+3	19	-1	61		2	waiting
+Wasted Space: 166 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+4	0	-1	53		0	finished
+4	1	0	29		2	running
+4	2	7	61		4	running
+4	3	-1	58		5	waiting
+4	4	-1	46		0	finished
+4	5	2	17		5	running
+4	6	-1	39		0	finished
+4	7	8	45		7	running
+4	8	-1	46		6	waiting
+4	9	-1	62		2	waiting
+4	10	-1	43		9	waiting
+4	11	6	26		3	ready
+4	12	-1	34		6	waiting
+4	13	9	25		6	ready
+4	14	-1	61		9	waiting
+4	15	-1	17		2	waiting
+4	16	-1	40		9	waiting
+4	17	-1	21		6	waiting
+4	18	-1	28		6	waiting
+4	19	-1	61		2	waiting
+Wasted Space: 205 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+5	0	-1	53		0	finished
+5	1	0	29		1	running
+5	2	7	61		3	running
+5	3	-1	58		5	waiting
+5	4	-1	46		0	finished
+5	5	2	17		4	running
+5	6	-1	39		0	finished
+5	7	8	45		6	running
+5	8	-1	46		6	waiting
+5	9	-1	62		2	waiting
+5	10	-1	43		9	waiting
+5	11	6	26		3	ready
+5	12	-1	34		6	waiting
+5	13	9	25		6	ready
+5	14	-1	61		9	waiting
+5	15	-1	17		2	waiting
+5	16	-1	40		9	waiting
+5	17	-1	21		6	waiting
+5	18	-1	28		6	waiting
+5	19	-1	61		2	waiting
+Wasted Space: 205 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+6	0	-1	53		0	finished
+6	1	-1	29		0	finished
+6	2	7	61		2	running
+6	3	-1	58		5	waiting
+6	4	-1	46		0	finished
+6	5	2	17		3	running
+6	6	-1	39		0	finished
+6	7	8	45		5	running
+6	8	-1	46		6	waiting
+6	9	-1	62		2	waiting
+6	10	-1	43		9	waiting
+6	11	6	26		2	running
+6	12	-1	34		6	waiting
+6	13	9	25		6	ready
+6	14	-1	61		9	waiting
+6	15	-1	17		2	waiting
+6	16	-1	40		9	waiting
+6	17	-1	21		6	waiting
+6	18	-1	28		6	waiting
+6	19	-1	61		2	waiting
+Wasted Space: 234 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+7	0	-1	53		0	finished
+7	1	-1	29		0	finished
+7	2	7	61		1	running
+7	3	-1	58		5	waiting
+7	4	-1	46		0	finished
+7	5	2	17		2	running
+7	6	-1	39		0	finished
+7	7	8	45		4	running
+7	8	-1	46		6	waiting
+7	9	-1	62		2	waiting
+7	10	-1	43		9	waiting
+7	11	6	26		1	running
+7	12	-1	34		6	waiting
+7	13	9	25		6	ready
+7	14	-1	61		9	waiting
+7	15	-1	17		2	waiting
+7	16	-1	40		9	waiting
+7	17	-1	21		6	waiting
+7	18	-1	28		6	waiting
+7	19	-1	61		2	waiting
+Wasted Space: 234 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+8	0	-1	53		0	finished
+8	1	-1	29		0	finished
+8	2	-1	61		0	finished
+8	3	-1	58		5	waiting
+8	4	-1	46		0	finished
+8	5	2	17		1	running
+8	6	-1	39		0	finished
+8	7	8	45		3	running
+8	8	-1	46		6	waiting
+8	9	-1	62		2	waiting
+8	10	-1	43		9	waiting
+8	11	-1	26		0	finished
+8	12	-1	34		6	waiting
+8	13	9	25		5	running
+8	14	-1	61		9	waiting
+8	15	-1	17		2	waiting
+8	16	-1	40		9	waiting
+8	17	-1	21		6	waiting
+8	18	-1	28		6	waiting
+8	19	-1	61		2	waiting
+Wasted Space: 321 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+9	0	-1	53		0	finished
+9	1	-1	29		0	finished
+9	2	-1	61		0	finished
+9	3	-1	58		5	waiting
+9	4	-1	46		0	finished
+9	5	-1	17		0	finished
+9	6	-1	39		0	finished
+9	7	8	45		2	running
+9	8	-1	46		6	waiting
+9	9	-1	62		2	waiting
+9	10	-1	43		9	waiting
+9	11	-1	26		0	finished
+9	12	-1	34		6	waiting
+9	13	9	25		5	running
+9	14	-1	61		9	waiting
+9	15	-1	17		2	waiting
+9	16	-1	40		9	waiting
+9	17	-1	21		6	waiting
+9	18	-1	28		6	waiting
+9	19	-1	61		2	waiting
+Wasted Space: 338 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+10	0	-1	53		0	finished
+10	1	-1	29		0	finished
+10	2	-1	61		0	finished
+10	3	-1	58		5	waiting
+10	4	-1	46		0	finished
+10	5	-1	17		0	finished
+10	6	-1	39		0	finished
+10	7	8	45		1	running
+10	8	-1	46		6	waiting
+10	9	-1	62		2	waiting
+10	10	-1	43		9	waiting
+10	11	-1	26		0	finished
+10	12	-1	34		6	waiting
+10	13	9	25		5	running
+10	14	-1	61		9	waiting
+10	15	-1	17		2	waiting
+10	16	-1	40		9	waiting
+10	17	-1	21		6	waiting
+10	18	-1	28		6	waiting
+10	19	-1	61		2	waiting
+Wasted Space: 338 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+11	0	-1	53		0	finished
+11	1	-1	29		0	finished
+11	2	-1	61		0	finished
+11	3	-1	58		5	waiting
+11	4	-1	46		0	finished
+11	5	-1	17		0	finished
+11	6	-1	39		0	finished
+11	7	-1	45		0	finished
+11	8	-1	46		6	waiting
+11	9	-1	62		2	waiting
+11	10	-1	43		9	waiting
+11	11	-1	26		0	finished
+11	12	-1	34		6	waiting
+11	13	9	25		5	running
+11	14	-1	61		9	waiting
+11	15	-1	17		2	waiting
+11	16	-1	40		9	waiting
+11	17	-1	21		6	waiting
+11	18	-1	28		6	waiting
+11	19	-1	61		2	waiting
+Wasted Space: 383 MB
+Jobs Waiting: 11
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+12	0	-1	53		0	finished
+12	1	-1	29		0	finished
+12	2	-1	61		0	finished
+12	3	4	58		4	running
+12	4	-1	46		0	finished
+12	5	-1	17		0	finished
+12	6	-1	39		0	finished
+12	7	-1	45		0	finished
+12	8	1	46		5	running
+12	9	7	62		1	running
+12	10	5	43		8	running
+12	11	-1	26		0	finished
+12	12	8	34		6	ready
+12	13	0	25		5	ready
+12	14	-1	61		9	waiting
+12	15	2	17		2	ready
+12	16	-1	40		9	waiting
+12	17	6	21		6	ready
+12	18	-1	28		6	waiting
+12	19	-1	61		2	waiting
+Wasted Space: 77 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+13	0	-1	53		0	finished
+13	1	-1	29		0	finished
+13	2	-1	61		0	finished
+13	3	4	58		3	running
+13	4	-1	46		0	finished
+13	5	-1	17		0	finished
+13	6	-1	39		0	finished
+13	7	-1	45		0	finished
+13	8	1	46		4	running
+13	9	-1	62		0	finished
+13	10	5	43		7	running
+13	11	-1	26		0	finished
+13	12	8	34		5	running
+13	13	0	25		5	ready
+13	14	-1	61		9	waiting
+13	15	2	17		2	ready
+13	16	-1	40		9	waiting
+13	17	6	21		6	ready
+13	18	-1	28		6	waiting
+13	19	-1	61		2	waiting
+Wasted Space: 139 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+14	0	-1	53		0	finished
+14	1	-1	29		0	finished
+14	2	-1	61		0	finished
+14	3	4	58		2	running
+14	4	-1	46		0	finished
+14	5	-1	17		0	finished
+14	6	-1	39		0	finished
+14	7	-1	45		0	finished
+14	8	1	46		3	running
+14	9	-1	62		0	finished
+14	10	5	43		6	running
+14	11	-1	26		0	finished
+14	12	8	34		4	running
+14	13	0	25		5	ready
+14	14	-1	61		9	waiting
+14	15	2	17		2	ready
+14	16	-1	40		9	waiting
+14	17	6	21		6	ready
+14	18	-1	28		6	waiting
+14	19	-1	61		2	waiting
+Wasted Space: 139 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+15	0	-1	53		0	finished
+15	1	-1	29		0	finished
+15	2	-1	61		0	finished
+15	3	4	58		1	running
+15	4	-1	46		0	finished
+15	5	-1	17		0	finished
+15	6	-1	39		0	finished
+15	7	-1	45		0	finished
+15	8	1	46		2	running
+15	9	-1	62		0	finished
+15	10	5	43		5	running
+15	11	-1	26		0	finished
+15	12	8	34		3	running
+15	13	0	25		5	ready
+15	14	-1	61		9	waiting
+15	15	2	17		2	ready
+15	16	-1	40		9	waiting
+15	17	6	21		6	ready
+15	18	-1	28		6	waiting
+15	19	-1	61		2	waiting
+Wasted Space: 139 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+16	0	-1	53		0	finished
+16	1	-1	29		0	finished
+16	2	-1	61		0	finished
+16	3	-1	58		0	finished
+16	4	-1	46		0	finished
+16	5	-1	17		0	finished
+16	6	-1	39		0	finished
+16	7	-1	45		0	finished
+16	8	1	46		1	running
+16	9	-1	62		0	finished
+16	10	5	43		4	running
+16	11	-1	26		0	finished
+16	12	8	34		2	running
+16	13	0	25		4	running
+16	14	-1	61		9	waiting
+16	15	2	17		2	ready
+16	16	-1	40		9	waiting
+16	17	6	21		6	ready
+16	18	-1	28		6	waiting
+16	19	-1	61		2	waiting
+Wasted Space: 197 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+17	0	-1	53		0	finished
+17	1	-1	29		0	finished
+17	2	-1	61		0	finished
+17	3	-1	58		0	finished
+17	4	-1	46		0	finished
+17	5	-1	17		0	finished
+17	6	-1	39		0	finished
+17	7	-1	45		0	finished
+17	8	-1	46		0	finished
+17	9	-1	62		0	finished
+17	10	5	43		3	running
+17	11	-1	26		0	finished
+17	12	8	34		1	running
+17	13	0	25		3	running
+17	14	-1	61		9	waiting
+17	15	2	17		1	running
+17	16	-1	40		9	waiting
+17	17	6	21		6	ready
+17	18	-1	28		6	waiting
+17	19	-1	61		2	waiting
+Wasted Space: 243 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+18	0	-1	53		0	finished
+18	1	-1	29		0	finished
+18	2	-1	61		0	finished
+18	3	-1	58		0	finished
+18	4	-1	46		0	finished
+18	5	-1	17		0	finished
+18	6	-1	39		0	finished
+18	7	-1	45		0	finished
+18	8	-1	46		0	finished
+18	9	-1	62		0	finished
+18	10	5	43		2	running
+18	11	-1	26		0	finished
+18	12	-1	34		0	finished
+18	13	0	25		2	running
+18	14	-1	61		9	waiting
+18	15	-1	17		0	finished
+18	16	-1	40		9	waiting
+18	17	6	21		5	running
+18	18	-1	28		6	waiting
+18	19	-1	61		2	waiting
+Wasted Space: 294 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+19	0	-1	53		0	finished
+19	1	-1	29		0	finished
+19	2	-1	61		0	finished
+19	3	-1	58		0	finished
+19	4	-1	46		0	finished
+19	5	-1	17		0	finished
+19	6	-1	39		0	finished
+19	7	-1	45		0	finished
+19	8	-1	46		0	finished
+19	9	-1	62		0	finished
+19	10	5	43		1	running
+19	11	-1	26		0	finished
+19	12	-1	34		0	finished
+19	13	0	25		1	running
+19	14	-1	61		9	waiting
+19	15	-1	17		0	finished
+19	16	-1	40		9	waiting
+19	17	6	21		4	running
+19	18	-1	28		6	waiting
+19	19	-1	61		2	waiting
+Wasted Space: 294 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+20	0	-1	53		0	finished
+20	1	-1	29		0	finished
+20	2	-1	61		0	finished
+20	3	-1	58		0	finished
+20	4	-1	46		0	finished
+20	5	-1	17		0	finished
+20	6	-1	39		0	finished
+20	7	-1	45		0	finished
+20	8	-1	46		0	finished
+20	9	-1	62		0	finished
+20	10	-1	43		0	finished
+20	11	-1	26		0	finished
+20	12	-1	34		0	finished
+20	13	-1	25		0	finished
+20	14	-1	61		9	waiting
+20	15	-1	17		0	finished
+20	16	-1	40		9	waiting
+20	17	6	21		3	running
+20	18	-1	28		6	waiting
+20	19	-1	61		2	waiting
+Wasted Space: 362 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+21	0	-1	53		0	finished
+21	1	-1	29		0	finished
+21	2	-1	61		0	finished
+21	3	-1	58		0	finished
+21	4	-1	46		0	finished
+21	5	-1	17		0	finished
+21	6	-1	39		0	finished
+21	7	-1	45		0	finished
+21	8	-1	46		0	finished
+21	9	-1	62		0	finished
+21	10	-1	43		0	finished
+21	11	-1	26		0	finished
+21	12	-1	34		0	finished
+21	13	-1	25		0	finished
+21	14	-1	61		9	waiting
+21	15	-1	17		0	finished
+21	16	-1	40		9	waiting
+21	17	6	21		2	running
+21	18	-1	28		6	waiting
+21	19	-1	61		2	waiting
+Wasted Space: 362 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+22	0	-1	53		0	finished
+22	1	-1	29		0	finished
+22	2	-1	61		0	finished
+22	3	-1	58		0	finished
+22	4	-1	46		0	finished
+22	5	-1	17		0	finished
+22	6	-1	39		0	finished
+22	7	-1	45		0	finished
+22	8	-1	46		0	finished
+22	9	-1	62		0	finished
+22	10	-1	43		0	finished
+22	11	-1	26		0	finished
+22	12	-1	34		0	finished
+22	13	-1	25		0	finished
+22	14	-1	61		9	waiting
+22	15	-1	17		0	finished
+22	16	-1	40		9	waiting
+22	17	6	21		1	running
+22	18	-1	28		6	waiting
+22	19	-1	61		2	waiting
+Wasted Space: 362 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+23	0	-1	53		0	finished
+23	1	-1	29		0	finished
+23	2	-1	61		0	finished
+23	3	-1	58		0	finished
+23	4	-1	46		0	finished
+23	5	-1	17		0	finished
+23	6	-1	39		0	finished
+23	7	-1	45		0	finished
+23	8	-1	46		0	finished
+23	9	-1	62		0	finished
+23	10	-1	43		0	finished
+23	11	-1	26		0	finished
+23	12	-1	34		0	finished
+23	13	-1	25		0	finished
+23	14	-1	61		9	waiting
+23	15	-1	17		0	finished
+23	16	-1	40		9	waiting
+23	17	-1	21		0	finished
+23	18	-1	28		6	waiting
+23	19	-1	61		2	waiting
+Wasted Space: 383 MB
+Jobs Waiting: 4
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+24	0	-1	53		0	finished
+24	1	-1	29		0	finished
+24	2	-1	61		0	finished
+24	3	-1	58		0	finished
+24	4	-1	46		0	finished
+24	5	-1	17		0	finished
+24	6	-1	39		0	finished
+24	7	-1	45		0	finished
+24	8	-1	46		0	finished
+24	9	-1	62		0	finished
+24	10	-1	43		0	finished
+24	11	-1	26		0	finished
+24	12	-1	34		0	finished
+24	13	-1	25		0	finished
+24	14	4	61		8	running
+24	15	-1	17		0	finished
+24	16	1	40		8	running
+24	17	-1	21		0	finished
+24	18	0	28		5	running
+24	19	7	61		1	running
+Wasted Space: 193 MB
+Jobs Waiting: 0
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+25	0	-1	53		0	finished
+25	1	-1	29		0	finished
+25	2	-1	61		0	finished
+25	3	-1	58		0	finished
+25	4	-1	46		0	finished
+25	5	-1	17		0	finished
+25	6	-1	39		0	finished
+25	7	-1	45		0	finished
+25	8	-1	46		0	finished
+25	9	-1	62		0	finished
+25	10	-1	43		0	finished
+25	11	-1	26		0	finished
+25	12	-1	34		0	finished
+25	13	-1	25		0	finished
+25	14	4	61		7	running
+25	15	-1	17		0	finished
+25	16	1	40		7	running
+25	17	-1	21		0	finished
+25	18	0	28		4	running
+25	19	-1	61		0	finished
+Wasted Space: 254 MB
+Jobs Waiting: 0
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+26	0	-1	53		0	finished
+26	1	-1	29		0	finished
+26	2	-1	61		0	finished
+26	3	-1	58		0	finished
+26	4	-1	46		0	finished
+26	5	-1	17		0	finished
+26	6	-1	39		0	finished
+26	7	-1	45		0	finished
+26	8	-1	46		0	finished
+26	9	-1	62		0	finished
+26	10	-1	43		0	finished
+26	11	-1	26		0	finished
+26	12	-1	34		0	finished
+26	13	-1	25		0	finished
+26	14	4	61		6	running
+26	15	-1	17		0	finished
+26	16	1	40		6	running
+26	17	-1	21		0	finished
+26	18	0	28		3	running
+26	19	-1	61		0	finished
+Wasted Space: 254 MB
+Jobs Waiting: 0
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+27	0	-1	53		0	finished
+27	1	-1	29		0	finished
+27	2	-1	61		0	finished
+27	3	-1	58		0	finished
+27	4	-1	46		0	finished
+27	5	-1	17		0	finished
+27	6	-1	39		0	finished
+27	7	-1	45		0	finished
+27	8	-1	46		0	finished
+27	9	-1	62		0	finished
+27	10	-1	43		0	finished
+27	11	-1	26		0	finished
+27	12	-1	34		0	finished
+27	13	-1	25		0	finished
+27	14	4	61		5	running
+27	15	-1	17		0	finished
+27	16	1	40		5	running
+27	17	-1	21		0	finished
+27	18	0	28		2	running
+27	19	-1	61		0	finished
+Wasted Space: 254 MB
+Jobs Waiting: 0
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+28	0	-1	53		0	finished
+28	1	-1	29		0	finished
+28	2	-1	61		0	finished
+28	3	-1	58		0	finished
+28	4	-1	46		0	finished
+28	5	-1	17		0	finished
+28	6	-1	39		0	finished
+28	7	-1	45		0	finished
+28	8	-1	46		0	finished
+28	9	-1	62		0	finished
+28	10	-1	43		0	finished
+28	11	-1	26		0	finished
+28	12	-1	34		0	finished
+28	13	-1	25		0	finished
+28	14	4	61		4	running
+28	15	-1	17		0	finished
+28	16	1	40		4	running
+28	17	-1	21		0	finished
+28	18	0	28		1	running
+28	19	-1	61		0	finished
+Wasted Space: 254 MB
+Jobs Waiting: 0
+
+TIME	ID	SEGMENT	MEM REQ	TIME REMAINING	MESSAGES
+29	0	-1	53		0	finished
+29	1	-1	29		0	finished
+29	2	-1	61		0	finished
+29	3	-1	58		0	finished
+29	4	-1	46		0	finished
+29	5	-1	17		0	finished
+29	6	-1	39		0	finished
+29	7	-1	45		0	finished
+29	8	-1	46		0	finished
+29	9	-1	62		0	finished
+29	10	-1	43		0	finished
+29	11	-1	26		0	finished
+29	12	-1	34		0	finished
+29	13	-1	25		0	finished
+29	14	4	61		3	running
+29	15	-1	17		0	finished
+29	16	1	40		3	running
+29	17	-1	21		0	finished
+29	18	-1	28		0	finished
+29	19	-1	61		0	finished
+Wasted Space: 282 MB
+Jobs Waiting: 0
+
+Time is up!
+Number of finished jobs: 18

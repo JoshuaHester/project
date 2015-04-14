@@ -19,6 +19,7 @@ public class Segments{
 		this.segSize=size;
 		this.occupied=false;
 		this.wastedSpace = 0;
+		this.job = null;
 	}
 	
 	//returns the segment number
@@ -31,12 +32,10 @@ public class Segments{
 		job = j;
 		occupied = true;
 		job.setSegmentNumber(segmentNumber);
-		job.setStatus("running");
 	}
 	
 	//removes the assigned job from the segment
 	public void removeJob() {
-		job.setStatus("finished");
 		job = null;
 		occupied = false;
 		wastedSpace = 0;
@@ -73,5 +72,15 @@ public class Segments{
 		job = null;
 		occupied = false;
 		wastedSpace = 0;
+	}
+	
+	//updates the segment
+	public void update() {
+		job.decrementTime();
+		if(job != null) {
+			if(job.getStatus().equals("finished")) {
+				occupied = false;
+			}
+		}
 	}
 }

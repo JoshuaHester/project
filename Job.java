@@ -75,7 +75,11 @@ public class Job{
 	
 	//updates the job's time remaining
 	public void decrementTime(){
+		status = "running";
 		exTimeRem--;
+		if(exTimeRem <= 0) {
+			status = "finished";
+		}
 	}
 	
 	//returns the job's remaining execution time

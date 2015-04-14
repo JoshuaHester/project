@@ -16,6 +16,9 @@ public class Generator {
 	private int runningJobs;				//number of jobs currently running
 	private int finishedJobs;				//number of jobs completed
 	private int timer;					//how much time has passed
+	private int jobsRunning;				//number of jobs currently running
+	private int jobsReady;				//number of jobs in ready queue
+	private int jobsFinished;				//number of jobs finished
 	private Job[] jobs;					//list of jobs 
 	private Segments[] segments;			//list of segments
 	
@@ -30,41 +33,14 @@ public class Generator {
 		sortJobs(order);
 	}
 	
-	//test run to see if statuses update/allocation methods work
-	public void test() {
-		for(int i = 0; i < jobs.length; i++) {
-			if(allocation == Allocation.FIRST_FIT) {
-				int fit = firstFit(jobs[i]);
-				//System.out.println("Job " + i + " first fit is " + fit);
-				if(fit != -1 && !segments[fit].isOccupied()) {
-					segments[fit].assignJob(jobs[i]);
-				}
-			}
-			else if(allocation == Allocation.BEST_FIT) {
-				int fit = bestFit(jobs[i]);
-				//System.out.println("Job " + i + " best fit is " + fit); 
-				if(fit != -1 && !segments[fit].isOccupied()) {
-					segments[fit].assignJob(jobs[i]);
-				}
-			}
-		}
-		
-	/*	for(int i = 0; i < segments.length; i++){
-			if(segments[i].isOccupied()) {
-				segments[i].removeJob();
-			}
-		}*/
-	}
-	
 	//checks to see if jobs need to be sorted
 	public void sortJobs(Order ord) {
 		if(ord == Order.SJF) {
 			shortestJobFirst();
 		}
-		//printJobs();
 	}
 	
-	//sorts the job into shortest job first orde
+	//sorts the job into shortest job first order
 	public void shortestJobFirst() {
 		boolean flag = true;
 		while(flag) {
@@ -110,7 +86,7 @@ public class Generator {
 	//prints the jobs; used for testing
 	public void printJobs() {
 		for(int i = 0; i < jobs.length; i++) {
-			System.out.println(jobs[i].getID() + " " + jobs[i].getTimeRequest());
+			System.out.println("Job ID: " + jobs[i].getID() + " Time: " + jobs[i].getTimeRequest() + " Memory: " + jobs[i].getMemoryRequest());
 		}
 	}
 	
@@ -131,14 +107,12 @@ public class Generator {
 	
 	//writes the results of each time unit to the screen and output file
 	public void writeOutput() {
-		if(timer == 0) {
-			String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES";
-			System.out.println(header);
-			outputFile.println(header);
-		}
+		String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQ" + "\tTIME REMAINING" + "\tMESSAGES";
+		System.out.println(header);
+		outputFile.println(header);
 		
 		for(int i = 0; i < jobs.length; i++) {
-			String output = timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus();
+			String output = timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus();
 			System.out.println(output);
 			outputFile.println(output);
 		}
@@ -152,8 +126,6 @@ public class Generator {
 		outputFile.println(waiting);
 		outputFile.println();
 	}
-	
-	
 	
 	//returns the number of finished jobs
 	public int finishedJobs() {
@@ -201,114 +173,132 @@ public class Generator {
 		return true;
 	}
 	
-	public int[] nextSegments(int[] segment) {//4 segments are supposed to execute simultaneously, "Segments" are the segment numbers to be executing this round. If [2,3,4,5] is passed in, [6,7,8,9] should be returned.
-
-		//return portion. This does not currently account for a segment not running due to having nothing to run. in those cases, the segment number for each subsequent segment should be incremented
-		int[] returns = new int[4];
-		boolean[] open = new boolean[10];
-			for(int i = 0; i<10; i++){
-				open[i] = !segments[i].isOccupied();
-			}
-			boolean flag = true;
-			//step 1 (+4)
-			int[] temp = {segment[0]+4,segment[1]+4,segment[2]+4,segment[3]+4}; //0,1,2,3
-			for(int i=0;i<4;i++){
-				//step 2 (WRAP)
-				int diff = temp[i] - 10;
-				if(diff>=0){
-					temp[i]=diff;
-				}
-			}
-			//step 3 (is empty? if yes, add and wrap when needed)
-			int j=0;
-			while(j<10) {
-				j++;
-				for(int k=0;k<4;k++){
-					if(open[temp[k]]){
-						for(k=k;k<4;k++){
-							temp[k]++;
-						}
-					}
-					
-					for(int i=0;i<4;i++){
-						//(WRAP)
-						int diff = temp[i] - 10;
-						if(diff>=0){
-							temp[i]=diff;
-						}
-					}
-				}
-				//temp[i]=-1
-			}
-			System.out.print(temp[0]);System.out.print(temp[1]);System.out.print(temp[2]);System.out.print(temp[3]);System.out.println();
-			return temp;
+	//checks to see if the program has finished
+	public boolean checkFinished() {
+		if(allJobsFinished()) {
+			finishedOutput();
+			return true;
 		}
-		
-		
-		
-		/*	
-		for(int z=0;z<10;z++) {
-			for(int i=0; i<4; i++){
-				while(!segments[i+1].isOccupied()){
-					for(i=i;i<4;i++){
-						int temp = segment[i]+1;
-						
-					}
-				}
-				
-				
-				int temp = segment[i]+4;
-				int diff = temp - 10;
-				if(diff>=0){
-					returns[i] = diff;
-				}
-				else {
-					returns[i] = temp;
-				}
-				
-			
-			}
-			System.out.println(returns);
+		else if (timer == 30) {
+			finishedOutput();
+			return true;
 		}
-		
-		return returns; // [6,7,8,9] --> [0,1,2,3] \, &  [0,1,2,3] --> [0,3,4,5] --> [0,3,5,6] & [6,7,8,9] --> [6,9,0,3]
-	}*/
+		else {
+			return false;
+		}
+	}
 	
-	public void execute() {
-		int[] segs = {6,7,8,9};
-		//allocation of segments
-		while(timer<=30) {
-			for(int i = 0; i < segments.length; i++) {
-				if(allocation == Allocation.FIRST_FIT) {
-					int fit = firstFit(jobs[i]);
-					if(fit != -1 && !segments[fit].isOccupied()) {
+	//output when the program finishes 
+	public void finishedOutput() {
+		if(allJobsFinished()) {
+			String finished = "All jobs have been completed!";
+			System.out.println(finished);
+			outputFile.println(finished);
+			outputFile.close();
+		}
+		else if(timer == 30) {
+			String timesUp = "Time is up!";
+			System.out.println(timesUp);
+			outputFile.println(timesUp);
+			String finishedJobs = "Number of finished jobs: " + finishedJobs();
+			System.out.println(finishedJobs);
+			outputFile.println(finishedJobs);
+			outputFile.close();
+		}
+	}
+	
+	//brings jobs into the ready queue when currently loaded jobs are finished
+	public void loadJobs() {
+		jobsReady = 0;
+		for(int i = jobsReady; i < 20; i++) {
+			boolean check = true;
+			int fit = 0;
+			if(allocation == Allocation.FIRST_FIT) {
+				fit = firstFit(jobs[i]);
+			}
+			else if (allocation == Allocation.BEST_FIT) {
+				fit = bestFit(jobs[i]);
+			}
+			for(int j = 0; j < 7; j++) {
+				if(fit != -1 && !segments[fit].isOccupied() && !jobs[i].getStatus().equals("finished")) {
+					if(check) {
+						check = false;
 						segments[fit].assignJob(jobs[i]);
-					}
-				}
-				else if(allocation == Allocation.BEST_FIT) {
-					int fit = bestFit(jobs[i]);
-					if(fit != -1 && !segments[fit].isOccupied()) {
-						segments[fit].assignJob(jobs[i]);
+						if(jobsRunning < 4) {
+							jobs[i].setStatus("running");
+							jobsRunning++;
+						}
+						else {
+							jobs[i].setStatus("ready");
+							jobsReady++;
+						}
 					}
 				}
 			}
-			segs = nextSegments(segs);
-			writeOutput();
-			for(int i=0;i<4;i++) {
-				segments[segs[i]].getJob().decrementTime();
-				segments[segs[i]].getJob().setStatus("running");
-				if(segments[segs[i]].getJob().getTimeRemaining()==0) {
-					segments[segs[i]].getJob().setStatus("finish");
-					segments[segs[i]].removeJob();
+		}
+	}
+	
+	//updates the ready queue
+	public void updateReadyQueue() {
+		if(checkFinished() == false) {
+			int k;
+			jobsFinished = 0;
+			for(k = 0; k < 9; k++) {
+				if(segments[k].getJob() != null && segments[k].getJob().getStatus().equals("running")) {
+					segments[k].update();
+					if(segments[k].getJob().getStatus().equals("finished")) {
+						segments[k].getJob().setSegmentNumber(-1);
+						jobsRunning--;
+					}
+				}
+				if(!segments[k].isOccupied()){
+					jobsFinished++;
 				}
 			}
-			timer++;
+			
+			k = 0;
+			while(jobsRunning < 4 && k < 9) {
+				if(segments[k].getJob() != null && segments[k].getJob().getStatus().equals("finished") && k < 9) {
+					int nextJob = findNextJob();
+					if(nextJob != -1) {
+						segments[jobs[nextJob].getSegmentNumber()].update();
+						jobsRunning++;
+					}
+				}
+				k++;
+			}
 			writeOutput();
 			
-			
+			if(jobsFinished == 9) {
+				jobsRunning = 0;
+				refresh();
+			}
 		}
 	}
 	
 	
+	public void refresh() {
+		jobsFinished = 0;
+		loadJobs();
+	}
 	
+	//finds the next ready job
+	public int findNextJob() {
+		int index = -1;
+		for(int i = 0; i < 20; i++) {
+			if(jobs[i].getStatus().equals("ready")) {
+				index = i;
+				return index;
+			}
+		}
+		return index;
+	}
+	
+	//executes the program for 30 seconds
+	public void execute() {
+		while(timer < 31) {
+			updateReadyQueue();
+			timer++;
+		}
+	}
 }
