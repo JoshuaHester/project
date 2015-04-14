@@ -42,6 +42,11 @@ public class Segments{
 		wastedSpace = 0;
 	}
 	
+	//returns the job currently in segment
+	public Job getJob() {
+		return job;
+	}
+	
 	//returns the size of the segment
 	public int getSize(){
 		return segSize;

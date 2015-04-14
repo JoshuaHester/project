@@ -64,7 +64,7 @@ public class Generator {
 		//printJobs();
 	}
 	
-	//sorts the job into shortest job first order
+	//sorts the job into shortest job first orde
 	public void shortestJobFirst() {
 		boolean flag = true;
 		while(flag) {
@@ -131,16 +131,18 @@ public class Generator {
 	
 	//writes the results of each time unit to the screen and output file
 	public void writeOutput() {
-		String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES";
-		System.out.println(header);
-		outputFile.println(header);
+		if(timer == 0) {
+			String header = "TIME" + "\tID" + "\tSEGMENT" + "\tMEM REQUEST" + "\tTIME REMAINING" + "\tMESSAGES";
+			System.out.println(header);
+			outputFile.println(header);
+		}
 		
 		for(int i = 0; i < jobs.length; i++) {
 			String output = timer + "\t" + jobs[i].getID() + "\t" + jobs[i].getSegmentNumber() + "\t" + jobs[i].getMemoryRequest() + "\t" + jobs[i].getTimeRemaining() + "\t" + jobs[i].getStatus();
 			System.out.println(output);
 			outputFile.println(output);
 		}
-		
+					
 		String wasted = "Wasted Space: " + totalWaste() + " MB";
 		String waiting = "Jobs Waiting: " + waitingJobs();
 		System.out.println(wasted);

@@ -74,8 +74,9 @@ public class Job{
 	}
 	
 	//updates the job's time remaining
-	public void setTimeRemaining(int time){
-		this.exTimeRem=time;
+	public int decrementTime(){
+		exTimeRem--;
+		return exTimeRem;
 	}
 	
 	//returns the job's remaining execution time
